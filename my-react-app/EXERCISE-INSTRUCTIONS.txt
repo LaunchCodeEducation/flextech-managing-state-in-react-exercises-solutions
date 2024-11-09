@@ -1,0 +1,130 @@
+
+Exercise 1: Managing State with useState
+Description: Create a simple counter component that increments and decrements a number using the useState hook.
+
+
+
+
+Exercise 2: Handling Derived State
+Description: Create a component that calculates and displays the square of a number stored in state.
+
+
+
+Exercise 3: Using useEffect for Side Effects
+Description: Create a component that fetches data from a mock API when it mounts and displays it.
+
+
+
+
+Exercise 4: Implementing an Error Boundary
+Description: Create an error boundary component to catch errors in child components.
+Then, wrap the DataFetcher component in this new Error Boundary component.
+Then from within DataFetcher right before the return, throw an error with the message
+"Data Fetcher failed!"
+
+
+
+
+
+
+Exercise 5: Setting Up Routing with React Router
+Description: Install react-router-dom inside of the `my-react-app` directory 
+and set up basic routing in the app.
+
+npm command to Install React Router:
+```
+npm install react-router-dom
+
+```
+
+
+Exercise 6: Declaring Routes and Using Link for Navigation
+Description: Create multiple pages and set up navigation using Link.
+Please create these Page components inside of `src/pages`
+
+
+
+Exercise 7: Using URL Parameters with useParams
+Description: Create a dynamic route that displays user profiles based on a user ID from the URL.
+
+
+
+
+
+Exercise 8: Handling 404 Pages
+Description: Create a component to display when no route matches (a "Not Found" page).
+
+
+
+
+
+Exercise 9: Programmatic Navigation with useNavigate
+Description: Use the useNavigate hook to navigate programmatically after a button click.
+
+
+
+Exercise 10: Handling Form Submissions
+Description: Create a simple form component that handles form submission and displays the submitted data.
+
+
+Exercise 11: Using React's Synthetic Event System
+Description: Explain how React's synthetic events work and create a component that logs event details on button clicks.
+
+
+
+Exercise 12: Fetching Data with Async/Await
+Description: Fetch data from an API using async/await and display it.
+
+
+
+Exercise 13: Handling Loading States and Errors
+Description: Enhance the previous data-fetching component to handle loading states and errors.
+
+
+
+Exercise 14: Optimizing with useCallback
+Description: Use useCallback to memoize event handlers and prevent unnecessary re-renders.
+Answer:
+
+}
+
+
+Exercise 15: Optimizing with useMemo
+Description: Use useMemo to memoize the expensive calculation below
+```
+const expensiveCalculation = (num) => {
+    console.log('Calculating...');
+    // Simulate heavy computation
+    for (let i = 0; i < 1000000000; i++) {}
+    return num * 2;
+  };
+```
+
+
+
+Exercise 16: Creating a Data Fetching Custom Hook
+Description: Create a custom hook useFetch to centralize data-fetching logic.
+
+
+
+Exercise 17: Centralizing Data Fetching with Custom Hooks
+Description: Explain the benefits of using custom hooks like useFetch for data fetching.
+
+
+Exercise 18: Using useReducer for State Management
+Description: Implement a counter using the useReducer hook.
+
+
+
+Exercise 19: Debouncing Input with useEffect
+Description: Implement an input field that debounces the user input before making an API call.
+
+
+Exercise 20: Throttling Scroll Events
+Description: Implement a component that logs the scroll position, throttled to once every 500ms.
+
+
+
+
+Exercise 21: Using React.Fragment and Short Syntax
+Description: Explain and demonstrate the use of React.Fragment and its shorthand syntax.
