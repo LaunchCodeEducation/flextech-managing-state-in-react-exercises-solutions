@@ -170,7 +170,8 @@ export default DataFetcher;
 
 
 
-Exercise 5: Implementing an Error Boundary
+
+Exercise 4: Implementing an Error Boundary
 Description: Create an error boundary component to catch errors in child components.
 Then, wrap the DataFetcher component in this new Error Boundary component.
 Then from within DataFetcher right before the return, throw an error with the message
@@ -244,7 +245,7 @@ export default FaultyComponent;
 
 ```
 
-Exercise 6: Setting Up Routing with React Router
+Exercise 5: Setting Up Routing with React Router
 Description: Install react-router-dom and set up basic routing in the app.
 Answer:
 
@@ -258,24 +259,21 @@ Update main.jsx to include the router:
 
 ```
 // src/main.jsx
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
 ```
 
-Exercise 7: Declaring Routes and Using Link for Navigation
+Exercise 6: Declaring Routes and Using Link for Navigation
 Description: Create multiple pages and set up navigation using Link.
 Answer:
 
@@ -329,7 +327,7 @@ export default App;
 
 ```
 
-Exercise 8: Using URL Parameters with useParams
+Exercise 7: Using URL Parameters with useParams
 Description: Create a dynamic route that displays user profiles based on a user ID from the URL.
 Answer:
 
@@ -381,7 +379,7 @@ export default App;
 
 ```
 
-Exercise 9: Handling 404 Pages
+Exercise 8: Handling 404 Pages
 Description: Create a component to display when no route matches (a "Not Found" page).
 Answer:
 
@@ -426,7 +424,7 @@ export default App;
 ```
 
 
-Exercise 10: Programmatic Navigation with useNavigate
+Exercise 9: Programmatic Navigation with useNavigate
 Description: Use the useNavigate hook to navigate programmatically after a button click.
 Answer:
 
@@ -469,7 +467,7 @@ export default Home;
 
 ```
 
-Exercise 11: Handling Form Submissions
+Exercise 10: Handling Form Submissions
 Description: Create a simple form component that handles form submission and displays the submitted data.
 Answer:
 
@@ -518,7 +516,7 @@ import SimpleForm from './components/SimpleForm';
 
 ```
 
-Exercise 12: Using React's Synthetic Event System
+Exercise 11: Using React's Synthetic Event System
 Description: Explain how React's synthetic events work and create a component that logs event details on button clicks.
 Answer:
 
@@ -543,7 +541,7 @@ export default EventLogger;
 
 ```
 
-Exercise 13: Fetching Data with Async/Await
+Exercise 12: Fetching Data with Async/Await
 Description: Fetch data from an API using async/await and display it.
 Answer:
 
@@ -583,7 +581,7 @@ export default AsyncDataFetcher;
 
 ```
 
-Exercise 14: Handling Loading States and Errors
+Exercise 13: Handling Loading States and Errors
 Description: Enhance the previous data-fetching component to handle loading states and errors.
 Answer:
 
@@ -633,67 +631,7 @@ export default EnhancedDataFetcher;
 ```
 
 
-Exercise 15: Using a Mock API
-Description: Set up a mock API using json-server and fetch data from it.
-Answer:
-
-Install json-server:
-
-```
-npm install -g json-server
-
-```
-
-Create a db.json file in the project root:
-
-```
-{
-  "posts": [
-    { "id": 1, "title": "Mock Post 1", "body": "This is a mock post." },
-    { "id": 2, "title": "Mock Post 2", "body": "Another mock post." }
-  ]
-}
-
-```
-
-Run the mock server:
-
-```
-json-server --watch db.json --port 3001
-
-```
-
-Update the data-fetching component to use the mock API:
-
-```
-// src/components/MockDataFetcher.jsx
-import React, { useState, useEffect } from 'react';
-
-function MockDataFetcher() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('http://localhost:3001/posts/1')
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error('Error fetching mock data:', error));
-  }, []);
-
-  if (!data) return <div>Loading mock data...</div>;
-
-  return (
-    <div>
-      <h2>{data.title}</h2>
-      <p>{data.body}</p>
-    </div>
-  );
-}
-
-export default MockDataFetcher;
-
-```
-
-Exercise 16: Optimizing with useCallback
+Exercise 14: Optimizing with useCallback
 Description: Use useCallback to memoize event handlers and prevent unnecessary re-renders.
 Answer:
 
@@ -727,7 +665,7 @@ export default CallbackDemo;
 
 ```
 
-Exercise 17: Optimizing with useMemo
+Exercise 15: Optimizing with useMemo
 Description: Use useMemo to memoize expensive calculations.
 Answer:
 
@@ -765,7 +703,7 @@ export default MemoizationDemo;
 
 ```
 
-Exercise 18: Creating a Data Fetching Custom Hook
+Exercise 16: Creating a Data Fetching Custom Hook
 Description: Create a custom hook useFetch to centralize data-fetching logic.
 Answer:
 
@@ -828,7 +766,7 @@ export default CustomHookDemo;
 
 ```
 
-Exercise 19: Centralizing Data Fetching with Custom Hooks
+Exercise 17: Centralizing Data Fetching with Custom Hooks
 Description: Explain the benefits of using custom hooks like useFetch for data fetching.
 Answer:
 
@@ -841,7 +779,7 @@ Testability: Custom hooks can be tested independently from components.
 
 
 
-Exercise 21: Using useReducer for State Management
+Exercise 18: Using useReducer for State Management
 Description: Implement a counter using the useReducer hook.
 Answer:
 
@@ -881,7 +819,7 @@ export default ReducerCounter;
 
 ```
 
-Exercise 22: Debouncing Input with useEffect
+Exercise 19: Debouncing Input with useEffect
 Description: Implement an input field that debounces the user input before making an API call.
 Answer:
 
@@ -926,7 +864,7 @@ export default DebouncedInput;
 
 ```
 
-Exercise 23: Throttling Scroll Events
+Exercise 20: Throttling Scroll Events
 Description: Implement a component that logs the scroll position, throttled to once every 500ms.
 Answer:
 
@@ -959,7 +897,8 @@ export default ThrottledScrollLogger;
 ```
 
 
-Exercise 25: Using React.Fragment and Short Syntax
+
+Exercise 21: Using React.Fragment and Short Syntax
 Description: Explain and demonstrate the use of React.Fragment and its shorthand syntax.
 Answer:
 
@@ -995,4 +934,3 @@ import FragmentDemo from './components/FragmentDemo';
 <FragmentDemo />
 
 ```
-

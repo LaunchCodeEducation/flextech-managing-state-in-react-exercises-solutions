@@ -9,6 +9,7 @@ import SimpleForm from "./components/SimpleForm";
 import EventLogger from "./components/EventLogger";
 import AsyncDataFetcher from "./components/AsyncDataFetcher";
 import EnhancedDataFetcher from "./components/EnhancedDataFetcher";
+import CallbackDemo from "./components/CallbackDemo";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Link to="/user/1">User 1</Link> | <Link to="form">Simple Form</Link> |
         <Link to="/logger">Event logger</Link> |{" "}
         <Link to="/async">Async Data Fetcher</Link> |
-        <Link to="/enhanced">Enhanced Data Fetcher</Link>
+        <Link to="/enhanced">Enhanced Data Fetcher</Link> |
+        <Link to="/use-callback">useCallback Demo</Link>
       </nav>
 
       <hr />
@@ -29,6 +31,7 @@ function App() {
         <Route path="/logger" element={<EventLogger />} />
         <Route path="/async" element={<AsyncDataFetcher />} />
         <Route path="/enhanced" element={<EnhancedDataFetcher />} />
+        <Route path="/use-callback" element={<CallbackDemo />} />
         <Route path="/user/:userId" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
