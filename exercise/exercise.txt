@@ -840,43 +840,6 @@ Maintainability: Easier to update data-fetching logic in one place.
 Testability: Custom hooks can be tested independently from components.
 
 
-Exercise 20: Preventing Unnecessary Re-renders
-Description: Demonstrate how to prevent unnecessary re-renders using React.memo.
-Answer:
-
-```
-// src/components/DisplayValue.jsx
-import React from 'react';
-
-function DisplayValue({ value }) {
-  console.log('DisplayValue rendered');
-  return <div>Value: {value}</div>;
-}
-
-export default React.memo(DisplayValue);
-
-// src/components/PreventReRendersDemo.jsx
-import React, { useState } from 'react';
-import DisplayValue from './DisplayValue';
-
-function PreventReRendersDemo() {
-  const [value, setValue] = useState(0);
-  const [otherState, setOtherState] = useState(false);
-
-  return (
-    <div>
-      <DisplayValue value={value} />
-      <button onClick={() => setValue(value + 1)}>Increment Value</button>
-      <button onClick={() => setOtherState(!otherState)}>
-        Toggle Other State: {otherState.toString()}
-      </button>
-    </div>
-  );
-}
-
-export default PreventReRendersDemo;
-
-```
 
 Exercise 21: Using useReducer for State Management
 Description: Implement a counter using the useReducer hook.
@@ -995,61 +958,6 @@ export default ThrottledScrollLogger;
 
 ```
 
-Exercise 24: Implementing Infinite Scroll
-Description: Create a component that loads more data as the user scrolls to the bottom.
-Answer:
-
-```
-// src/components/InfiniteScrollList.jsx
-import React, { useState, useEffect } from 'react';
-
-function InfiniteScrollList() {
-  const [items, setItems] = useState(Array.from({ length: 20 }));
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop !==
-          document.documentElement.offsetHeight ||
-        loading
-      )
-        return;
-
-      setLoading(true);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [loading]);
-
-  useEffect(() => {
-    if (!loading) return;
-
-    // Simulate fetching data
-    setTimeout(() => {
-      setItems((prev) => [...prev, ...Array.from({ length: 20 })]);
-      setLoading(false);
-    }, 1000);
-  }, [loading]);
-
-  return (
-    <div>
-      <h2>Infinite Scroll List</h2>
-      <ul>
-        {items.map((_, index) => (
-          <li key={index}>Item #{index + 1}</li>
-        ))}
-      </ul>
-      {loading && <p>Loading more items...</p>}
-    </div>
-  );
-}
-
-export default InfiniteScrollList;
-
-```
 
 Exercise 25: Using React.Fragment and Short Syntax
 Description: Explain and demonstrate the use of React.Fragment and its shorthand syntax.
@@ -1088,14 +996,3 @@ import FragmentDemo from './components/FragmentDemo';
 
 ```
 
-
-Conclusion
-
-These exercises cover various aspects of React, including state management, routing, event handling, 
-data fetching, performance optimization, and custom hooks. By implementing these exercises in your Vite app, 
-you will gain practical experience and deepen your understanding of React's core concepts.
-
-Feel free to modify the code, experiment with additional features, and explore further to enhance your learning experience.
-
-Note: Ensure that you import and export components correctly and that your file paths are accurate when adding these exercises to your Vite app. 
-Also, remember to handle any potential errors and edge cases as you implement these components.
