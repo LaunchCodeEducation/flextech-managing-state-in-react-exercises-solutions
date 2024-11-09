@@ -10,10 +10,6 @@ import EventLogger from "./components/EventLogger";
 import AsyncDataFetcher from "./components/AsyncDataFetcher";
 import EnhancedDataFetcher from "./components/EnhancedDataFetcher";
 import CallbackDemo from "./components/CallbackDemo";
-import MemoizationDemo from "./components/MemoizationDemo";
-import CustomHookDemo from "./components/CustomHookDemo";
-import ReducerCounter from "./components/ReducerCounter";
-import DebouncedInput from "./components/DebouncedInput";
 
 function App() {
   return (
@@ -24,11 +20,7 @@ function App() {
         <Link to="/logger">Event logger</Link> |{" "}
         <Link to="/async">Async Data Fetcher</Link> |
         <Link to="/enhanced">Enhanced Data Fetcher</Link> |
-        <Link to="/use-callback">useCallback Demo</Link> |
-        <Link to="/use-memo">useMemo Demo</Link> |
-        <Link to="/use-custom-hook">Custom Hook Demo</Link> |
-        <Link to="/reducer-counter">Reducer Counter</Link> |
-        <Link to="/debounce-input">Debounced Input</Link> |
+        <Link to="/use-callback">useCallback Demo</Link>
       </nav>
 
       <hr />
@@ -40,10 +32,6 @@ function App() {
         <Route path="/async" element={<AsyncDataFetcher />} />
         <Route path="/enhanced" element={<EnhancedDataFetcher />} />
         <Route path="/use-callback" element={<CallbackDemo />} />
-        <Route path="/use-memo" element={<MemoizationDemo />} />
-        <Route path="/use-custom-hook" element={<CustomHookDemo />} />
-        <Route path="/reducer-counter" element={<ReducerCounter />} />
-        <Route path="/debounce-input" element={<DebouncedInput />} />
         <Route path="/user/:userId" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
