@@ -168,48 +168,7 @@ export default DataFetcher;
 
 ```
 
-Exercise 4: Creating a Custom Hook
-Description: Create a custom hook useWindowWidth that returns the current width of the browser window.
-Answer:
-```
-// src/hooks/useWindowWidth.js
-import { useState, useEffect } from 'react';
 
-function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return width;
-}
-
-export default useWindowWidth;
-
-```
-
-Usage in a component:
-
-```
-// src/components/WindowWidthDisplay.jsx
-import React from 'react';
-import useWindowWidth from '../hooks/useWindowWidth';
-
-function WindowWidthDisplay() {
-  const width = useWindowWidth();
-
-  return <div>Window width: {width}px</div>;
-}
-
-export default WindowWidthDisplay;
-
-```
 
 Exercise 5: Implementing an Error Boundary
 Description: Create an error boundary component to catch errors in child components.
@@ -299,16 +258,19 @@ Update main.jsx to include the router:
 
 ```
 // src/main.jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 );
 
 ```
