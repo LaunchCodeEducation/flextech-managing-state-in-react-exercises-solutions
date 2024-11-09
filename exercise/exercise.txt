@@ -213,6 +213,9 @@ export default WindowWidthDisplay;
 
 Exercise 5: Implementing an Error Boundary
 Description: Create an error boundary component to catch errors in child components.
+Then, wrap the DataFetcher component in this new Error Boundary component.
+Then from within DataFetcher right before the return, throw an error with the message
+"Data Fetcher failed!"
 Answer:
 
 ```
